@@ -17,6 +17,7 @@
         "base",
     ],
     "data": [
+        "data/ptkp_category_data.xml",
         "menu.xml",
         "views/tax_period_views.xml",
         "views/ptkp_views.xml",
