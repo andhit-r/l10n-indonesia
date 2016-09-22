@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 OpenSynergy Indonesia
+     Copyright 2016 Prime Force Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="taxform_1721_a1_view_tree" model="ir.ui.view">
+    <field name="name">Form Taxform 1721 A1</field>
+    <field name="model">l10n_id.taxform_1721_a1</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="employee_id"/>
+            <field name="company_id"/>
+        </tree>
+    </field>
+</record>
+
+<record id="taxform_1721_a1_view_form" model="ir.ui.view">
+    <field name="name">Form Taxform 1721 A1</field>
+    <field name="model">l10n_id.taxform_1721_a1</field>
+    <field name="arch" type="xml">
+        <form>
+            <header>
+            </header>
+            <sheet>
+                <group name="group_main_1" colspan="4" col="2">
+                    <field name="name"/>
+                    <field name="company_id"/>
+                    <field name="date"/>
+                </group>
+                <group name="group_main_2" colspan="4" col="2" string="Identitas Penerima Penghasilan Yang Dipotong">
+                    <field name="employee_id"/>
+                </group>
+                <group name="group_bruto_1" colspan="4" col="2" string="Penghasilan Bruto">
+                    <field name="bruto_1" string="1. Gaji/Pensiunan Atau THT/JHT"/>
+                    <field name="bruto_2" string="2. Tunjangan PPh"/>
+                    <field name="bruto_3" string="3. Tunjangan Lainya, Uang Lembur Dan Sebagainya"/>
+                    <field name="bruto_4" string="4. Honorarium dan Imbalan Lain Sejenisnya"/>
+                    <field name="bruto_5" string="5. Premi Asuransi Yang Dibayarkan Pemberi Kerja"/>
+                    <field name="bruto_6" string="6. Penerimaan Dalam Bentuk Natura Dan Kenikmatan Lainnya Yang Dikenakan Pemotongan PPh Pasal 21"/>
+                    <field name="bruto_7" string="7. Tantiem, Bonus, Gratifikasi, Jasa Produksi, Dan THR"/>
+                    <field name="bruto_8" string="8. Jumlah Penghasilan Bruto (1 S.D. 7)"/>
+                </group>
+                <group name="group_deduction_1" colspan="4" col="2" string="Pengurangan">
+                    <field name="deduction_1" string="9. Biaya Jabatan/Biaya Pensiun"/>
+                    <field name="deduction_2" string="10. Iuran Pensiun Atau Iuran JHT/THT"/>
+                    <field name="deduction_3" string="11. JUmlah Pengurangan (9 S.D. 10)"/>
+                </group>
+                <group name="group_computation_1" colspan="4" col="2" string="Perhitungan PPh Pasal 21">
+                    <field name="computation_1" string="12. Jumlah Penghasilan Netto (1 S.D. 8)"/>
+                    <field name="computation_2" string="13. Penghasilan Netto Masa Pajak Sebelumnya"/>
+                    <field name="computation_3" string="14. Jumlah Penghasilan Netto Untuk Perhitungan PPh Pasal 21 (Setahun/Disetahunkan)"/>
+                    <field name="computation_4" string="15. Penghasilan Tidak Kena Pajak"/>
+                    <field name="computation_5" string="16. Penghasilan Kena Pajak Setahun/Disetahunkan (14 - 15)"/>
+                    <field name="computation_6" string="17. PPh Pasal 21 Atas Penghasilan Kena Pajak Setahu/Disetahunkan"/>
+                    <field name="computation_7" string="18. PPh Pasal 21 Yang Telah Dipotong Masa Pajak Sebelumnya"/>
+                    <field name="computation_8" string="19. PPh Pasal Terutang"/>
+                    <field name="computation_9" string="20. PPh Pasal 21 dan PPh Pasal 26 Yang Telah Dipotong Dan Dilunasi"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="taxform_1721_a1_action" model="ir.actions.act_window">
+    <field name="name">Formulir Pajak 1721 A1</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">l10n_id.taxform_1721_a1</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem 
+    id="taxform_1721_a1__menu"
+    name="1721 A1"
+    sequence="1"
+    parent="l10n_id_taxform.taxform_bukti_potong_21_26_menu"
+    action="taxform_1721_a1_action"
+    />
+
+</data>
+</openerp>
