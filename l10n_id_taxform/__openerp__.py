@@ -19,6 +19,7 @@
     "data": [
         "menu.xml",
         "views/tax_period_views.xml",
+        "views/ptkp_views.xml",
     ],
     "demo": [
         "demo/tax_period_demo.xml",
