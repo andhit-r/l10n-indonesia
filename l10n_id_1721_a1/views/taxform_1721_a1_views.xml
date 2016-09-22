@@ -28,11 +28,17 @@
             <sheet>
                 <group name="group_main_1" colspan="4" col="2">
                     <field name="name"/>
-                    <field name="company_id"/>
                     <field name="date"/>
+                    <field name="tax_year_id"/>
+                    <field name="tax_period_id"/>
+                </group>
+                <group name="group_main_3" colspan="4" col="2" string="Pemotong Pajak">
+                    <field name="company_id"/>
                 </group>
                 <group name="group_main_2" colspan="4" col="2" string="Identitas Penerima Penghasilan Yang Dipotong">
                     <field name="employee_id"/>
+                    <field name="ptkp_category_id"/>
+                    <field name="ptkp_line_id"/>
                 </group>
                 <group name="group_bruto_1" colspan="4" col="2" string="Penghasilan Bruto">
                     <field name="bruto_1" string="1. Gaji/Pensiunan Atau THT/JHT"/>

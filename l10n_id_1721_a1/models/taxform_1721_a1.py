@@ -28,9 +28,17 @@ class Taxform1721A1(models.Model):
         return False
 
     @api.multi
+    @api.depends(
+        "date", "employee_id",
+        "bruto_1", "bruto_2", "bruto_2", "bruto_3",
+        "bruto_4", "bruto_5", "bruto_6", "bruto_7",
+        "deduction_1", "deduction_2",
+        )
     def _compute_all(self):
         #TODO
         for taxform in self:
+            taxform.ptkp_line_id = False
+            taxform.ptkp_category_id = False
             taxform.bruto_8 = taxform.deduction_3 = taxform.computation_1 = \
                     taxform.computation_2 = taxform.computation_3 = \
                     taxform.computation_4 = taxform.computation_5 = \
@@ -70,6 +78,18 @@ class Taxform1721A1(models.Model):
         related="tax_period_id.year_id",
         store=True,
         readonly=True,
+        )
+    ptkp_line_id = fields.Many2one(
+        string="Tarif PTKP",
+        compute="_compute_all",
+        comodel_name="l10n_id.ptkp_line",
+        store=True,
+        )
+    ptkp_category_id = fields.Many2one(
+        string="Kategori PTKP",
+        compute="_compute_all",
+        comodel_name="l10n_id.ptkp_category",
+        store=True,
         )
     bruto_1 = fields.Float(
         string="Bruto Item 1",
